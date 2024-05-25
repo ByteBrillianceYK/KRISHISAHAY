@@ -17,7 +17,20 @@
   </head>
 
 <body>
-
+<style>
+	#translateButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+}
+</style>
 
 
 <section id="blog">
@@ -35,6 +48,9 @@
           <h6 class="mgt"><span class="date">April</span> <span class="year">2021</span></h6>	
 		</div>
 	  </div>
+	<button id="translateButton" onclick="translateToHindi()">Translate to Hindi</button>
+	  <div  id="englishContent">
+
 	   <div class="blog_1r">
 	    <h3><a href="#">Phosphate Fertilizers</a></h3>
 
@@ -43,7 +59,7 @@
 		<p>Commercial phosphate fertilizers are manufactured using phosphate rock. Approximately two-third of the world’s phosphate resources are derived from sedimentary and marine phosphate rock deposits. Ground rock phosphate has been used as a source of phosphorous for soils in the past. However, due to the low concentration of phosphorous in this native material, high transportation costs, and small crop responses, the usage of rock phosphate has reduced considerably in agriculture. On the other hand, the usage of phosphorous based fertilizers has grown significantly. The most commonly used phosphatic fertilizers are Diammonium Phosphate (DAP), Monoammonium Phosphate (MAP), NPKs, and SSP.</p>
 		<p>DAP is the world’s most widely used phosphorus fertilizer. It is popular due to its relatively high nutrient content and its excellent physical properties. DAP is an excellent source of phosphorus (P) and nitrogen (N) for plant nutrition. It provides the correct proportion of phosphorous and nitrogen for the farming of grains such as wheat, barley, fruits, and vegetables. The global demand for DAP is about 30 million tons a year.</p>
 		<p>NPKs, also called compound fertilizers, are fertilizers which contain all three nutrients, nitrogen, phosphorus, and potassium in different proportions. There are many types of NPK products in the world based on different nutrient recipes and they are often customized to best suit the needs of a specific crop or parcel of land. The global demand for NPKs is estimated to be about 20 million tons a year.</p>
-		
+		</div>
 	   </div>
 	 </div>
 	 
@@ -57,7 +73,7 @@
   <div class="row">
    <div class="col-sm-12">
     <div class="footer_main_1">
-	 <h2>Developed By Team Ayna</h2>
+	 <h2>Developed By Team Yadnyesh</h2>
 	 <ul>
 	      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
 		  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -100,20 +116,39 @@
 	 <div class="footer_4">
 	  <h1>Contact Details</h1>
 	  <ul>
-		   <li>MAIL : <a href="#"> teamayna@gmail.com</a></li>
+		   <li>MAIL : <a href="#">yadnyeshkhotre22@it.sce.edu.in</a></li>
 	  </ul>
 	 </div>
 	</div>
    </div>
    <div class="col-sm-12">
     <div class="footer_5">
-	 <p> © 2021 AYNA-ALL YOU NEED FOR AGRONOMY . All Rights Reserved | Design by Team Ayna</p>
+	 <p> © 2023 KRISHISAHAY. All Rights Reserved | Design by Team Yadnyesh</p>
 	</div>   
    </div>
   </div>
  </div>
 </section>
 <script type="text/javascript">
+	// Function to translate English to Hindi
+		function translateToHindi() {
+			const englishText = document.getElementById('englishContent').innerText;
+
+			// Your Google Translate API Key
+			const apiKey = 'AIzaSyDHpFMVutKIBDqbufrG9qy0Dk_VvXrCe6U';
+
+			// Replace 'en' with 'hi' for Hindi translation
+			const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=en&target=hi&q=${encodeURIComponent(englishText)}`;
+
+			// Making a GET request to the Google Translate API
+			fetch(apiUrl)
+				.then(response => response.json())
+				.then(data => {
+					const translatedText = data.data.translations[0].translatedText;
+					document.getElementById('englishContent').innerText = translatedText;
+				})
+				.catch(error => console.error('Error:', error));
+		}
 	  $("#menu-close").click(function(e) {
     e.preventDefault();
     $("#sidebar-wrapper").toggleClass("active");

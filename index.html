@@ -91,9 +91,9 @@
 	<meta name="viewport" content="width=device-width , initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="UTF-8">
-	<title>AYNA</title>
+	<title>KRISHISAHAY</title>
 	<!-- viewport meta -->
-	<meta name="AYNA" content="All You Need for Agronomy">
+	<meta name="KRISHISAHAY" content="All You Need for Agronomy">
 
 	<!-- styles -->
 	<!-- helpers -->
@@ -131,6 +131,63 @@
 <body>
 
 	<style type="text/css">
+		/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Change font family if needed */
+}
+
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
 
 		.header {
 		  overflow: hidden;
@@ -213,10 +270,27 @@
 		.subnav:hover .subnav-content {
 		  display: block;
 		}
+		#translateButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* Optional hover effect */
+#translateButton:hover {
+    background-color: #2980b9;
+}
+
 </style>	
 
 
-<!-- Start mainmenu -->
 <header>
 	<div class="header">
 	 <a href="#default" class="logo"><img style="height: 80px;" src="images/footer-logo.png" alt="logo"></a>
@@ -244,154 +318,140 @@
 		<li><a href="solarpanel.html">Solar Panel</a></li>
 		<li><a href="tech.html">Modern Day Tech</a></li>
 		</div>
+		
 	</div>
 	   <a href="Feedback.html">Feedback</a>
+	<a href="Cattle.html">Cattles</a>
+	<a href="SignUp.html">SignUp</a>
+	<a href="login.html">LogIn</a>
 	   </div>
-
+	
 </div>
 
 </header>
-<!-- End mainmenu -->
+
 
 
 <section class="rev_slider_wrapper thm-banner-wrapper">
-	<div id="slider1" class="rev_slider"  data-version="5.0">
+	<div id="slider1" class="rev_slider" data-version="5.0">
 		<ul>
+		
+		<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
+			<img src="images/slider/bg2.jpg" alt="crop">
+			
+			<div class="tp-caption sfb tp-resizeme caption-h1" data-x="left" data-hoffset="50" data-y="center"
+				data-voffset="-50" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="500">
+				Empowering Farmers<br>for a Brighter Future
+			</div>
+			
+			<div class="tp-caption sfb tp-resizeme caption-p" data-x="left" data-hoffset="50" data-y="center" data-voffset="80"
+				data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0"
+				data-start="1000">
+				<strong>Enabling Growth, Nurturing Prosperity</strong><br> We aim to revolutionize agriculture by providing
+				modern knowledge, resources, and technology to our farmers.
+			</div>
+		
+			<div class="tp-caption sfb tp-resizeme small-image" data-x="right" data-hoffset="-150" data-y="bottom"
+				data-voffset="-100" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<img src="images/farmer-icon.png" alt="Farmer Icon" class="small-img">
+			</div>
+			<div class="tp-caption sfb tp-resizeme small-image" data-x="right" data-hoffset="-50" data-y="bottom"
+				data-voffset="-200" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<img src="images/agriculture-icon.png" alt="Agriculture Icon" class="small-img">
+			</div>
+		
+		</li>
+		
+		
+		<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
+			<img src="images/slider/12.jpeg" alt="farms">
+			
+			<div class="tp-caption sfb tp-resizeme caption-h1" data-x="left" data-hoffset="50" data-y="center"
+				data-voffset="-50" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="500">
+				Farmers: Pillars of<br>Indian Economy
+			</div>
+		
+			<div class="tp-caption sfb tp-resizeme caption-p" data-x="left" data-hoffset="50" data-y="center" data-voffset="80"
+				data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0"
+				data-start="1000">
+				<strong>Supporting Progress, Nourishing Nation</strong><br> By supporting our farmers, we strengthen the nation.
+				Together, we build a robust and self-reliant India.
+			</div>
+			
+			<div class="tp-caption sfb tp-resizeme small-image" data-x="right" data-hoffset="-150" data-y="bottom"
+				data-voffset="-100" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<img src="images/india-flag-icon.png" alt="India Flag Icon" class="small-img">
+			</div>
+			<div class="tp-caption sfb tp-resizeme small-image" data-x="right" data-hoffset="-50" data-y="bottom"
+				data-voffset="-200" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<img src="images/economy-icon.png" alt="Economy Icon" class="small-img">
+			</div>
+			
+		</li>
+		<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
+			<img src="images/slider/crop.jpg" alt="Crop Background">
+			
+			<div class="tp-caption sfb tp-resizeme caption-h1" data-x="left" data-hoffset="50" data-y="center"
+				data-voffset="-50" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="500">
+				KRISHISAHAY
+			</div>
+			
+			<div class="tp-caption sfb tp-resizeme caption-p" data-x="left" data-hoffset="50" data-y="center" data-voffset="80"
+				data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0"
+				data-start="1000" style="color: #ffffff;"> <!-- Update the text color here -->
+				<strong style="color: #ffffff;">Empowering Farmers, Nourishing India</strong>
+			</div>
+		
+			<div class="tp-caption sfb tp-resizeme feature-text" data-x="right" data-hoffset="-200" data-y="top"
+				data-voffset="50" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<p><strong>Comprehensive Knowledge</strong><br> Explore vast farming resources</p>
+			</div>
+			<div class="tp-caption sfb tp-resizeme feature-text" data-x="right" data-hoffset="-200" data-y="top"
+				data-voffset="150" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<p><strong>Community Building</strong><br> Connect with fellow farmers</p>
+			</div>
+			
+		</li>
+		
+		<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
+			<img src="images/slider/11.jpeg" alt="Farms">
+			
+			<div class="tp-caption sfb tp-resizeme caption-h1" data-x="left" data-hoffset="50" data-y="center"
+				data-voffset="-50" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="500">
+				Our<br> Vision
+			</div>
+			
+			<div class="tp-caption sfb tp-resizeme caption-p" data-x="left" data-hoffset="50" data-y="center" data-voffset="80"
+				data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0"
+				data-start="1000" style="color: #ffffff;"> <!-- Update the text color here -->
+				<strong style="color: #ffffff;">Transforming Lives, Cultivating Progress</strong>
+			</div>
+		
+			<div class="tp-caption sfb tp-resizeme feature-text" data-x="right" data-hoffset="-200" data-y="top"
+				data-voffset="50" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<p><strong>Market Insights</strong><br> Access market trends and insights</p>
+			</div>
+			<div class="tp-caption sfb tp-resizeme feature-text" data-x="right" data-hoffset="-200" data-y="top"
+				data-voffset="150" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="o:0"
+				data-transform_out="o:0" data-start="1500">
+				<p><strong>Farming Innovations</strong><br> Explore innovative farming methods</p>
+			</div>
+		
+		</li>
 
-			<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
-				<img src="images/slider/crop.jpg"  alt="Crop Background">
-				<div class="tp-caption sfb tp-resizeme caption-h1" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="188" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="500">
-					AYNA
-			    </div>
-				<div class="tp-caption sfb tp-resizeme caption-p" 
-			        data-x="left" data-hoffset="33" 
-			        data-y="top" data-voffset="315" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1000">
-					"AYNA - <strong>You Need for Agronomy</strong>."
-			    </div>
-				
-			</li>
 
-			<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
-				<img src="images/slider/11.jpeg"  alt="Farms">
-				<div class="tp-caption sfb tp-resizeme caption-h1" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="248" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="500">
-					Our<br> Vision
-			    </div>
-				<div class="tp-caption sfb tp-resizeme caption-p" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="375" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1000">
-					Is to create awareness related to Farming Technics and Technology in Farmers community.
-			    </div>
-				<div class="tp-caption sfl tp-resizeme" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="500" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1500">
-			    </div>
-			</li>
-			<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
-				<img src="images/slider/bg2.jpg"  alt="crop">
-				<div class="tp-caption sfb tp-resizeme caption-h1" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="248" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="500">
-					AYNA<br>VISION
-			    </div>
-				<div class="tp-caption sfb tp-resizeme caption-p" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="375" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1000">
-			        Is to work for farmers problem and introduce them to various policies and Technology related to farming.
-					
-			    </div>
-				<div class="tp-caption sfl tp-resizeme" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="top" data-voffset="500" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1500">
-					<!--<a href="about.html" class="thm-btn">About Us <i class="fa fa-arrow-right"></i></a>-->
-			    </div>
-			</li>
 
-			<li data-transition="parallaxvertical" data-ease="SlowMo.ease">
-				<img src="images/slider/12.jpeg"  alt="farms">
-				<div class="tp-caption sfb tp-resizeme caption-h1" 
-			        data-x="left" data-hoffset="0" 
-			        data-y="bottom" data-voffset="0" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="500">
-					
-			    </div>
-				<div class="tp-caption sfb tp-resizeme caption-h1" 
-			        data-x="right" data-hoffset="0" 
-			        data-y="bottom" data-voffset="0" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1700">
-					
-			    </div>
-				<div class="tp-caption sfb tp-resizeme caption-p" 
-			        data-x="right" data-hoffset="50" 
-			        data-y="top" data-voffset="275" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1100">
-					"Farming looks mighty easy when your plow is a pencil,<br> and you're a thousand miles from the corn field." <br> - President Dwight D. Eisenhower			    </div>
-			    <div class="tp-caption sfl tp-resizeme" 
-			        data-x="right" data-hoffset="460" 
-			        data-y="top" data-voffset="360" 
-			        data-whitespace="nowrap"
-			        data-transform_idle="o:1;" 
-			        data-transform_in="o:0" 
-			        data-transform_out="o:0" 
-			        data-start="1500">
-					<!--<a href="https://www.vitbhopal.ac.in/" class="thm-btn inverse">VIT Bhopal <i class="fa fa-arrow-right"></i></a>-->
-			    </div>
-			</li>
 		</ul>
 	</div>
 </section>
@@ -399,30 +459,48 @@
 <section class="about-info-box sec-padding">
 	<div class="thm-container">
 		<div class="row">
-		
-			
 			<div class="col-lg-8 col-md-8">
 				<div class="sec-title">
-					<h2><span>What is AYNA</span></h2>
-					<ul class="bulleted-list">
-					<li><i class="fa fa-arrow-circle-right"></i> AYNA (All You Need for Agronomy) is a website particularly for the Indian Farmers to provide all information in one portal.</li> 
-					</ul>
-					<h2><span>What does AYNA means?</span></h2>
-					<ul class="bulleted-list">
-						<li><i class="fa fa-arrow-circle-right"></i> AYNA - All You Need for Agronomy</li>
-						<li><i class="fa fa-arrow-circle-right"></i> AYNA also stands for mirror in Hindi. Same as a mirror our website also reflects out all the info that's out there without misleading.</li>
-					</ul>
-					<h2><span>Reasons to Use AYNA</span></h2>
-					<ul class="bulleted-list">
-					<li><i class="fa fa-arrow-circle-right"></i> A farmer will be able to get all relevant information on specific subjects around his state.</li>
-					<li><i class="fa fa-arrow-circle-right"></i> One Stop Solution for Farmers with most of the required Info available at one place.</li>
-					<li><i class="fa fa-arrow-circle-right"></i> Consist of features like weather report, government schemes, seed price etc.</li> 
-					</ul>
+					<button id="translateButton" onclick="translateToHindi()">Translate to Hindi</button>
+					<br>
+					<br>
+					<div id="englishContent">
+						<h2><span>What is KRISHISAHAY</span></h2>
+						<ul class="bulleted-list">
+							<li><i class="fa fa-arrow-circle-right"></i> KRISHISAHAY (Knowledge Repository & Information
+								System for Hindustani
+								Agriculture: Support And Help for Yields) is a website particularly for the Indian
+								Farmers to provide all
+								information in one portal.</li>
+						</ul>
+						<h2><span>What does KRISHISAHAY mean?</span></h2>
+						<ul class="bulleted-list">
+							<li><i class="fa fa-arrow-circle-right"></i> KRISHISAHAY - Knowledge Repository &
+								Information System for Hindustani
+								Agriculture: Support And Help for Yields</li>
+							<li><i class="fa fa-arrow-circle-right"></i> Krishi Sahay" (कृषि सहाय) in Hindi translates
+								to "Agricultural Aid" or
+								"Farmers' Help" in English. Same as a mirror our website also reflects out all the info
+								that's out there without
+								misleading.</li>
+						</ul>
+						<h2><span>Reasons to Use KRISHISAHAY</span></h2>
+						<ul class="bulleted-list">
+							<li><i class="fa fa-arrow-circle-right"></i> A farmer will be able to get all relevant
+								information on specific subjects around his state.</li>
+							<li><i class="fa fa-arrow-circle-right"></i> One Stop Solution for Farmers with most of the
+								required Info available at one place.</li>
+							<li><i class="fa fa-arrow-circle-right"></i> Consist of features like weather report,
+								government schemes, seed price etc.</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+
 
 <section class="welcome-services home-one">
 	<div class="thm-container">
@@ -520,7 +598,7 @@
 			<div class="col-md-4 col-sm-6 footer-widget">
 				<div class="about-widget">
 					<a href="index.html"><img style="height: 150px;" src="images/footer-logo.png" alt="logo"/></a>
-					<p>All You Need for Agronomy</p>
+					<p>All You Need for Agriculture</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 footer-widget">
@@ -541,15 +619,44 @@
 <section class="bottom-bar">
 	<div class="thm-container clearfix">
 		<div class="pull-left">
-			<p>AYNA All rights reserved.</p>
+			<p>@Yadnyesh Khotre ©2023 rights reserved.</p>
 		</div>
 		<div class="pull-right">
 			
-			<a href="#">Created By : <i>AYNA TEAM</i> </a>
+			<a href="#">Created By : <i>Yadnyesh Khotre</i> </a>
 			
 		</div>
 	</div>
 </section>
+
+<!-- <button onclick="translateToHindi()">Translate to Hindi</button> -->
+
+<!-- Example content to be translated -->
+<!-- <p id="englishContent">
+	This is an example English text to be translated.
+</p> -->
+
+<script>
+	// Function to translate English to Hindi
+	function translateToHindi() {
+		const englishText = document.getElementById('englishContent').innerText;
+
+		// Your Google Translate API Key
+		const apiKey = 'AIzaSyDHpFMVutKIBDqbufrG9qy0Dk_VvXrCe6U';
+
+		// Replace 'en' with 'hi' for Hindi translation
+		const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=en&target=hi&q=${encodeURIComponent(englishText)}`;
+
+		// Making a GET request to the Google Translate API
+		fetch(apiUrl)
+			.then(response => response.json())
+			.then(data => {
+				const translatedText = data.data.translations[0].translatedText;
+				document.getElementById('englishContent').innerText = translatedText;
+			})
+			.catch(error => console.error('Error:', error));
+	}
+</script>
 
 
 <!-- jQuery js -->
@@ -593,5 +700,6 @@
 
 <!-- theme custom js  -->
 <script src="js/main.js"></script>
+
 </body>
 </html>

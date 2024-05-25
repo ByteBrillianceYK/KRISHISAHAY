@@ -1,63 +1,3 @@
-/***************************************************************************************************************
-||||||||||||||||||||||||||||       MASTER STYLESHEET FOR LOGIS CARGO        ||||||||||||||||||||||||||||||||||||
-****************************************************************************************************************
-||||||||||||||||||||||||||||              TABLE OF CONTENT                  ||||||||||||||||||||||||||||||||||||
-****************************************************************************************************************
-****************************************************************************************************************
-1. extarnal styles
-2. Global styles
-3. Caption Effect styles
-4. Accrodion styles
-5. Top Bar styles
-6. header styles
-7. Header Menu styles
-8. Header Two styles
-9. Header Three styles
-10. Banner styles
-11. Welcome Section styles
-12. Featured Services styles
-13. Call To Action styles
-14. FAQ styles
-15. Contact From styles
-16. Testimonials styles
-17. Team Page styles
-18. Fact Counter styles
-19. Latest Blog styles
-20. Client Carousel styles
-21. Footer Top styles
-22. Footer styles
-23. Bottom Bar styles
-24. Inner Banner styles
-25. Services styles
-26. About Info Box styles
-27. Side Bar Widget styles
-28. Fleet Gallery styles
-29. Pricing styles
-30. FAQ Page styles
-31. Testimonial Page styles
-32. Page Navigation styles
-33. 404 Error styles
-34. Single service page styles
-35. FAQ Form styles
-36. Career Page styles
-37. Blog Page styles
-38. Text Slider styles
-39. Request Qoute New Style
-40. Featured Services Style Two
-41. Welcome Services Home one styles
-42. Testimonials box with carousel styles
-43. Track Your shipment styles
-****************************************************************************************************************
-||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
-****************************************************************************************************************
-****************************************************************************************************************/
-
-
-
-
-/* ==============================
-  1. extarnal styles
-=========================== */
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
@@ -483,7 +423,7 @@ display: inline-block;
   background-size: cover;
 }
    /*background-color: #0cafd2;*/
-}
+
 #header:after {
   content: '';
   position: absolute;

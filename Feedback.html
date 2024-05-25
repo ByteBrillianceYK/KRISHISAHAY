@@ -93,9 +93,9 @@
 	<meta name="viewport" content="width=device-width , initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="UTF-8">
-	<title>AYNA</title>
+	<title>KRISHISAHAY</title>
 	<!-- viewport meta -->
-	<meta name="AYNA" content="All You Need for Agronomy">
+	<meta name="KRISHISAHAY" content="All You Need for KRISHISAHAY">
 
 	<!-- styles -->
 	<!-- helpers -->
@@ -129,6 +129,9 @@
 	<!-- responsive stylesheet -->
 	<link rel="stylesheet" href="css/responsive.css">
 
+<!-- Add Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 
 
 </head>
@@ -265,25 +268,17 @@
 		</div><br>
 		<div class="row">
 			<div class="col-md-7 col-sm-6 col-xs-12 pull-left">
-				<form action="contact-form-handler.php" class="contact-form contact-page">
-					<p><input id="name" type="text" placeholder="Name" name="name"></p>
-					<p><input id="email" type="text" placeholder="Email" name="email"></p>
-					<!--<p><input type="text" placeholder="Subject" name="subject"></p>-->
-					<p><textarea id="message" name="message" placeholder="Feedback"></textarea></p>
-					<button class = "popup" onclick="submitFunction()" type="submit" class="thm-btn">Submit Now<span class="popuptext" id="myPopup">Thanks for your response</span></button>
-					<script>
-						function submitFunction()
-						{
-							var popup = document.getElementById("myPopup");
-  							popup.classList.toggle("show");
-							var x = document.getElementById("name");
-							var y = document.getElementById("email");
-							var z = document.getElementById("message");
-							x.value = "";
-							y.value = "";
-							z.value = "";
-						}
-					</script>
+				<form id="contactForm" class="contact-form contact-page" onsubmit="submitForm(event)">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name"><br><br>
+				
+					<label for="email">Email:</label>
+					<input type="email" id="emailid" name="email"><br><br>
+				
+					<label for="message">Message:</label>
+					<textarea id="msgContent" name="message"></textarea><br><br>
+				
+					<input type="submit" value="Submit">
 				</form>
 			</div>
 			
@@ -300,7 +295,7 @@
 			<div class="col-md-4 col-sm-6 footer-widget">
 				<div class="about-widget">
 					<a href="index.html"><img style="height: 150px;" src="images/footer-logo.png" alt="logo"/></a>
-					<p>All You Need for Agronomy</p>
+					<p>All You Need for Agriculture</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 footer-widget">
@@ -321,15 +316,80 @@
 <section class="bottom-bar">
 	<div class="thm-container clearfix">
 		<div class="pull-left">
-			<p>AYNA All rights reserved.</p>
+			<p>Yadnyesh Khotre All rights reserved.</p>
 		</div>
 		<div class="pull-right">
 			
-			<a href="#">Created By : <i>AYNA TEAM</i> </a>
+			<a href="#">Created By : <i>Yadnyesh Khotre</i> </a>
 			
 		</div>
 	</div>
 </section>
+<!-- <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script> -->
+<script type="module">
+
+	// Import the functions you need from the SDKs you need
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+
+	// Your web app's Firebase configuration
+	const firebaseConfig = {
+		apiKey: "AIzaSyCseZw6Ll13ddq-4_MxgTvTCetCfa7YpiY",
+		authDomain: "contactform-69617.firebaseapp.com",
+		databaseURL: "https://contactform-69617-default-rtdb.firebaseio.com",
+		projectId: "contactform-69617",
+		storageBucket: "contactform-69617.appspot.com",
+		messagingSenderId: "717450505903",
+		appId: "1:717450505903:web:8897da694a345c0b8fae5a"
+	};
+
+	// initialize firebase
+		firebase.initializeApp(firebaseConfig);
+
+		// reference your database
+		var contactFormDB = firebase.database().ref("contactForm");
+
+		document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+		function submitForm(e) {
+			e.preventDefault();
+
+			var name = getElementVal("name");
+			var emailid = getElementVal("emailid");
+			var msgContent = getElementVal("msgContent");
+
+			saveMessages(name, emailid, msgContent);
+
+			//   enable alert
+			document.querySelector(".alert").style.display = "block";
+
+			//   remove the alert
+			setTimeout(() => {
+				document.querySelector(".alert").style.display = "none";
+			}, 3000);
+
+			//   reset the form
+			document.getElementById("contactForm").reset();
+		}
+
+		const saveMessages = (name, emailid, msgContent) => {
+			var newContactForm = contactFormDB.push();
+
+			newContactForm.set({
+				name: name,
+				emailid: emailid,
+				msgContent: msgContent,
+			});
+		};
+
+		const getElementVal = (id) => {
+			return document.getElementById(id).value;
+		};
+
+</script>
+
 
 
 <!-- jQuery js -->
@@ -375,9 +435,7 @@
 <script src="js/main.js"></script>
 
 
-
-
-
+	
 
 </body>
 

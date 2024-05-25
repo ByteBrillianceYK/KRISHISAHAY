@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        /* Basic reset for margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* Change font family if needed */
+            background-image: url('https://free4kwallpapers.com/uploads/originals/2019/04/11/village-cow-farmer-trees-sun-wallpaper.jpg');
+            /* Background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            /* Text color */
+        }
+
+        .login-form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Darker background color with some transparency */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: calc(100% - 10px);
+            /* Adjusting for padding */
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Lighter background for inputs */
+            color: black;
+            /* Text color */
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="password"]:focus {
+            border-color: #333;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button id="signIn" value="Sign In" type="submit">Login</button>
+        </form>
+    </div>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBkHnQpAcpiiQpqeRz3q1KC0gtK8il6PjU",
+            authDomain: "signup-6ae8d.firebaseapp.com",
+            projectId: "signup-6ae8d",
+            storageBucket: "signup-6ae8d.appspot.com",
+            messagingSenderId: "169601510953",
+            appId: "1:169601510953:web:082cfb716aad627d017638"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth()
+
+
+        var email = document.getElementById('email')
+        var password = document.getElementById('password')
+
+
+        window.login = function (e) {
+            e.preventDefault();
+            var obj = {
+                email: email.value,
+
+                password: password.value
+            }
+            signInWithEmailAndPassword(auth, obj.email, obj.password)
+                .then(function (success) {
+                    window.location.href = 'index.html';
+                })
+                .catch(function (err) {
+                    alert("error" + err)
+                })
+        }
+        // console.log(obj)
+    </script>
+</body>
+
+</html>

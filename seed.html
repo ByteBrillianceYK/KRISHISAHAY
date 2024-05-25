@@ -119,6 +119,18 @@ p {
                border-style: solid; 
                padding: 30px;
            }
+           #translateButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+}
 </style>
 <body>
 <header>
@@ -278,13 +290,14 @@ p {
 <br></br>
 
 <div class="header">
+<button id="translateButton" onclick="translateToHindi()">Translate to Hindi</button>
 
 <h2>Types of Wheat Seed </h2>
 
 </div>
 <img src="https://m.economictimes.com/thumb/msid-87478409,width-1200,height-900,resizemode-4,imgsize-290124/istock-528475944.jpg" alt="wheat image"align=right height=637px width=650px>
 
-
+<div id="englishContent">
 <div class="boxx">
 <p align="justify">Wheat the most staple crop of human origin has been in food habits of general population since centuries. We all consume it for our daily requirements of nutrients and fulfill our need to enhance the energy level. We can’t even think of our food without this important crop.It's been ages that we have been consuming it and seen many changes which have to lead to its improvement and enhancement not only in terms of quantity but quality also. A number of researches are being gone on worldwide to enhance the production of wheat.</p>
 <h3>Best Varieties of Wheat for Rabi Season</h3>
@@ -301,6 +314,7 @@ p {
 
 <h3>4. HD 1605 (Pusa Ujala)</h3>
 <p>The variety is famous for its ability of resistance to black and brown rusts and also has a good level of resistance to flag smut, Karnal bunt, leaf blight, and foot rot diseases. It has excellent chapatti-making quality, good sedimentation value (-55 ml), high protein (-13%), and a high amount of micronutrients like iron (43 ppm) and zinc ( 35 ppm).</p>
+</div>
 </div>
 
 <h2>Types of Maize Seed</h2>
@@ -392,7 +406,8 @@ Pod corn is not grown commercially, but it is preserved in some localities</p>
 <div class="header">
 <h2>Types Of Coffees</h2>
 </div>
-<img src="https://media.istockphoto.com/photos/coffee-beans-on-twig-picture-id1136899466?k=20&m=1136899466&s=612x612&w=0&h=QKRB4z1BZv-h0sANNPxzyILT-KRhm4zKJpnePDWIC08=" alt="Tea Plant"align="Right" height=615px width=650px>
+<img src="https://thecoffeesprawl.com/wp-content/uploads/2022/03/4-TYPES-OF-COFFEE-beans.png" alt="Tea Plant"
+  align="Right" height=615px width=650px>
 
 <div class="boxx">
 <p>The four main coffee types are Arabica, Robusta, Excelsa, and Liberica and all four of them have radically different taste profiles. Arabica is mild coffee, but the beans being more aromatic, it has higher market value compared to Robusta beans. On the other hand Robusta has more strength and is, therefore, used in making various blends.</p>
@@ -414,7 +429,8 @@ Pod corn is not grown commercially, but it is preserved in some localities</p>
 <div class="header">
 <h2>Types of Teas</h2>
 </div>
-<img src="https://www.bakhabarkissan.com/wp-content/uploads/2018/08/tea-crop.jpg" alt="Tea Plant"align="Right" height=350px width=650px>
+<img src="https://m.media-amazon.com/images/I/512UAgl7SYL._SL500_.jpg" alt="Tea Plant" align="Right" height=350px
+  width=650px>
 <div class ="boxx">
 <p>There are over 3000 varieties of tea, each with its own specific characteristics. The naming and growing of teas is in many ways similar to wine. Just as Bordeaux wine is named after the Bordeaux region in France and Champagne can only be produced in the province of Champagne, many teas are also named after the area they are grown in. For example, Assam tea is named after the Assam region in India and Yunnan tea is named after the Chinese province. Like wine, where the tea is grown, the climate, soil conditions and how the tea is processed will altogether determine its flavor characteristics.Basically there are 2 types of tea seeds which are used for growing tea plants which are as follows:</p>
 
@@ -462,8 +478,9 @@ align="Right" height=511px width=650px>
 </div>
 
 <h2>Price of Major Crops In India</h2>
-<table>
-  <tr>
+<div style="text-align: center;">
+  <table style="border-collapse: collapse; width: 80%; margin: 20px auto; font-family: Arial, sans-serif;">
+    <tr>
     <th>Crop</th>
     <th>Price in 2019(Rs. per Quintal)</th>
     <th>Price in 2020(Rs. per Quintal</th>
@@ -524,11 +541,30 @@ align="Right" height=511px width=650px>
   </tr>
 
 </table>
-
+</div>
 	
 </iframe>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  // Function to translate English to Hindi
+    function translateToHindi() {
+      const englishText = document.getElementById('englishContent').innerText;
+
+      // Your Google Translate API Key
+      const apiKey = 'AIzaSyDHpFMVutKIBDqbufrG9qy0Dk_VvXrCe6U';
+
+      // Replace 'en' with 'hi' for Hindi translation
+      const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=en&target=hi&q=${encodeURIComponent(englishText)}`;
+
+      // Making a GET request to the Google Translate API
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const translatedText = data.data.translations[0].translatedText;
+          document.getElementById('englishContent').innerText = translatedText;
+        })
+        .catch(error => console.error('Error:', error));
+    }
   AOS.init();
 </script>
 </body>

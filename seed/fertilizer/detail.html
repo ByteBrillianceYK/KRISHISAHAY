@@ -19,7 +19,7 @@
 <body>
 
 
-
+<button id="translateButton">Translate to Hindi</button>
 <section id="blog">
  <div class="container">
   <div class="row">
@@ -36,6 +36,7 @@
 		</div>
 	  </div>
 	   <div class="blog_1r">
+		
 	    <h3><a href="#">Nitrogen Fertilizers</a></h3>
 
 		<p>The nitrogenous fertilizer industry includes the production of synthetic ammonia, nitric acid, ammonium nitrate, and urea. Synthetic ammonia and nitric acid are used primarily as intermediates in the production of ammonium nitrate and urea fertilizers</p>
@@ -59,7 +60,7 @@ Urea (also known as carbamide or carbonyl diamide) is produced by reacting ammon
   <div class="row">
    <div class="col-sm-12">
     <div class="footer_main_1">
-	 <h2>Developed By Team Ayna</h2>
+	<h2>Developed By Team Yadnyesh</h2>
 	 <ul>
 	      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
 		  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -102,14 +103,14 @@ Urea (also known as carbamide or carbonyl diamide) is produced by reacting ammon
 	 <div class="footer_4">
 	  <h1>Contact Details</h1>
 	  <ul>
-		   <li>MAIL : <a href="#"> teamayna@gmail.com</a></li>
+		<li>MAIL : <a href="#">yadnyeshkhotre22@it.sce.edu.in</a></li>
 	  </ul>
 	 </div>
 	</div>
    </div>
    <div class="col-sm-12">
     <div class="footer_5">
-	 <p> © 2021 AYNA-ALL YOU NEED FOR AGRONOMY . All Rights Reserved | Design by Team Ayna</p>
+	<p > © 2023 KRISHISAHAY . All Rights Reserved | Design by Team Yadnyesh</p>
 	</div>   
    </div>
   </div>
@@ -124,6 +125,26 @@ Urea (also known as carbamide or carbonyl diamide) is produced by reacting ammon
     e.preventDefault();
     $("#sidebar-wrapper").toggleClass("active");
   });
+		// Function to translate English to Hindi
+		//Function to translate English to Hindi
+		function translateToHindi() {
+			const englishText = document.getElementById('englishContent').innerText;
+
+			// Your Google Translate API Key
+			const apiKey = 'AIzaSyDHpFMVutKIBDqbufrG9qy0Dk_VvXrCe6U';
+
+			// Replace 'en' with 'hi' for Hindi translation
+			const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=en&target=hi&q=${encodeURIComponent(englishText)}`;
+
+			// Making a GET request to the Google Translate API
+			fetch(apiUrl)
+				.then(response => response.json())
+				.then(data => {
+					const translatedText = data.data.translations[0].translatedText;
+					document.getElementById('englishContent').innerText = translatedText;
+				})
+				.catch(error => console.error('Error:', error));
+		}
 	</script>
 </body>
 </html>

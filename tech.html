@@ -89,6 +89,7 @@
     .colorbadlo{
       background-color: black;
     }
+    
 </style>
   <head>
     <meta charset="utf-8">
@@ -134,8 +135,9 @@
     </div>
     <br>
 <div class="wrapper">
-
+<button id="translateButton" onclick="translateToHindi()">Translate to Hindi</button>
 </div>
+<div id="englishContent">
 <div class="middle-container">
   <div class="profile">
     <img class="IAPP" src="images/Tech1.jpeg" alt="iapp">
@@ -171,10 +173,13 @@ a:hover, a:active {
 
 </div>
 </div>
+  
 <br>
 <div class="wrapper2">
 
 </div>
+
+
 <div class="middle2-container">
   <div class="profile">
     <img class="mm1" src="images/tech4.jpeg" alt="mm1">
@@ -208,6 +213,7 @@ a:hover, a:active {
      <a href="https://agrimachinery.nic.in/" target="_blank">Learn More</a>
    </div>
    </div>
+
    <br>
 
    <div class="wrapper3">
@@ -290,7 +296,7 @@ a:hover, a:active {
 </div>
 
 <br>
-
+</div>
 
 <div class="wrapper5">
 
@@ -304,7 +310,29 @@ a:hover, a:active {
   </div>
 </div>
 
+<script>
+  // Function to translate English to Hindi
+  function translateToHindi() {
+    const englishText = document.getElementById('englishContent').innerText;
 
-<p align = "center">© Team AYNA</p>
+    // Your Google Translate API Key
+    const apiKey = 'AIzaSyDHpFMVutKIBDqbufrG9qy0Dk_VvXrCe6U';
+
+    // Replace 'en' with 'hi' for Hindi translation
+    const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&source=en&target=hi&q=${encodeURIComponent(englishText)}`;
+
+                    // Making a GET request to the Google Translate API
+                    fetch(apiUrl)
+                      .then(response => response.json())
+                      .then(data => {
+                        const translatedText = data.data.translations[0].translatedText;
+                        document.getElementById('englishContent').innerText = translatedText;
+                      })
+                      .catch(error => console.error('Error:', error));
+                  }
+                </script>
+            
+            
+            <p align="center">© Yadnyesh Khotre</p>
 </body>
 </html>
